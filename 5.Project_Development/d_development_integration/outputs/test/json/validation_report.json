@@ -1,0 +1,22 @@
+[
+    {
+        "Check": "Dataset Loaded",
+        "Status": "PASS",
+        "Details": "2200 rows"
+    },
+    {
+        "Check": "Required Columns",
+        "Status": "PASS",
+        "Details": "None"
+    },
+    {
+        "Check": "Duplicate Columns",
+        "Status": "PASS",
+        "Details": "None"
+    },
+    {
+        "Check": "Numeric Feature Types",
+        "Status": "PASS",
+        "Details": "All Numeric"
+    }
+]

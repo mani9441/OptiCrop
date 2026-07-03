@@ -1,0 +1,8 @@
+Feature,Highest Mean Crop,Lowest Mean Crop,Overall Mean
+N,cotton,lentil,50.55
+P,apple,orange,53.36
+K,grapes,orange,48.15
+temperature,papaya,chickpea,25.62
+humidity,coconut,chickpea,71.48
+ph,chickpea,kidneybeans,6.47
+rainfall,rice,muskmelon,103.46

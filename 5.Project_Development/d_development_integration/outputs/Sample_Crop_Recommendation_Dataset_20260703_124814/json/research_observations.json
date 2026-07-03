@@ -1,0 +1,72 @@
+[
+    {
+        "Observation":"Highest average N",
+        "Crop":"cotton",
+        "Value":117.77
+    },
+    {
+        "Observation":"Lowest average N",
+        "Crop":"lentil",
+        "Value":18.77
+    },
+    {
+        "Observation":"Highest average P",
+        "Crop":"apple",
+        "Value":134.22
+    },
+    {
+        "Observation":"Lowest average P",
+        "Crop":"orange",
+        "Value":16.55
+    },
+    {
+        "Observation":"Highest average K",
+        "Crop":"grapes",
+        "Value":200.11
+    },
+    {
+        "Observation":"Lowest average K",
+        "Crop":"orange",
+        "Value":10.01
+    },
+    {
+        "Observation":"Highest average temperature",
+        "Crop":"papaya",
+        "Value":33.72
+    },
+    {
+        "Observation":"Lowest average temperature",
+        "Crop":"chickpea",
+        "Value":18.87
+    },
+    {
+        "Observation":"Highest average humidity",
+        "Crop":"coconut",
+        "Value":94.84
+    },
+    {
+        "Observation":"Lowest average humidity",
+        "Crop":"chickpea",
+        "Value":16.86
+    },
+    {
+        "Observation":"Highest average ph",
+        "Crop":"chickpea",
+        "Value":7.34
+    },
+    {
+        "Observation":"Lowest average ph",
+        "Crop":"kidneybeans",
+        "Value":5.75
+    },
+    {
+        "Observation":"Highest average rainfall",
+        "Crop":"rice",
+        "Value":236.18
+    },
+    {
+        "Observation":"Lowest average rainfall",
+        "Crop":"muskmelon",
+        "Value":24.69
+    }
+]

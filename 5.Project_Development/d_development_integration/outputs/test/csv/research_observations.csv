@@ -1,0 +1,15 @@
+Observation,Crop,Value
+Highest average N,cotton,117.77
+Lowest average N,lentil,18.77
+Highest average P,apple,134.22
+Lowest average P,orange,16.55
+Highest average K,grapes,200.11
+Lowest average K,orange,10.01
+Highest average temperature,papaya,33.72
+Lowest average temperature,chickpea,18.87
+Highest average humidity,coconut,94.84
+Lowest average humidity,chickpea,16.86
+Highest average ph,chickpea,7.34
+Lowest average ph,kidneybeans,5.75
+Highest average rainfall,rice,236.18
+Lowest average rainfall,muskmelon,24.69

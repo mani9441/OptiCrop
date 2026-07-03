@@ -1,0 +1,10 @@
+joblib
+flask
+numpy
+pandas
+missingno
+sklearn
+matplotlib
+seaborn
+scipy
+reportlab

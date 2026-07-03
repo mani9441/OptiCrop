@@ -1,0 +1,14 @@
+OptiCrop Research Analytics Report
+========================================
+Dataset: Sample_Crop_Recommendation_Dataset
+Dataset Size : 2200 rows x 8 columns
+Number of Crops : 22
+
+Highest Mean Values
+- N: cotton (117.77)
+- P: apple (134.22)
+- K: grapes (200.11)
+- temperature: papaya (33.72)
+- humidity: coconut (94.84)
+- ph: chickpea (7.34)
+- rainfall: rice (236.18)

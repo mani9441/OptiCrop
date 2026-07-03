@@ -1,0 +1,5 @@
+Check,Status,Details
+Dataset Loaded,PASS,2200 rows
+Required Columns,PASS,None
+Duplicate Columns,PASS,None
+Numeric Feature Types,PASS,All Numeric

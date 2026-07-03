@@ -1,0 +1,540 @@
+<!doctype html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>OptiCrop Research Analytics Dashboard</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/favicon1.png') }}"
+    />
+
+    <!-- Optional Apple Touch Icon -->
+    <link
+      rel="apple-touch-icon"
+      href="{{ url_for('static', filename='images/favicon1.png') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <div class="brand">
+        <img
+          src="{{ url_for('static', filename='images/logo2.png') }}"
+          alt="OptiCrop Logo"
+          class="brand-logo"
+        />
+      </div>
+      <ul class="nav-links">
+        <li class="active" data-target="dashboard">
+          <i class="fa-solid fa-chart-pie"></i> Overview
+        </li>
+        <li data-target="recommendation">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Recommend Crop
+        </li>
+        <li data-target="validation">
+          <i class="fa-solid fa-circle-check"></i> Validate Plan
+        </li>
+        <li data-target="analytics">
+          <i class="fa-solid fa-flask-vial"></i> Research Pipeline
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <header>
+        <h1>OptiCrop System Dashboard</h1>
+        <div class="system-status">
+          <span class="status-indicator"></span> Core API Online
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <!-- SECTION 1: OVERVIEW DASHBOARD -->
+        <div id="dashboard" class="tab-content active">
+          <div class="metric-grid">
+            <div class="metric-card">
+              <i class="fa-solid fa-database text-blue"></i>
+              <div>
+                <h3>2,200 Rows</h3>
+                <p>Total Dataset Records</p>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <i class="fa-solid fa-table-columns text-orange"></i>
+              <div>
+                <h3>8 Features</h3>
+                <p>Input Variables</p>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <i class="fa-solid fa-seedling text-green"></i>
+              <div>
+                <h3>22 Crops</h3>
+                <p>Target Classes</p>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <i class="fa-solid fa-circle-check text-teal"></i>
+              <div>
+                <h3>100%</h3>
+                <p>Data Completeness</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-layout">
+            <div class="card">
+              <h2>
+                <i class="fa-solid fa-circle-info"></i>
+                Dataset Summary
+              </h2>
+
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Property</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Total Samples</td>
+                    <td>2200</td>
+                  </tr>
+
+                  <tr>
+                    <td>Numerical Features</td>
+                    <td>7</td>
+                  </tr>
+
+                  <tr>
+                    <td>Categorical Features</td>
+                    <td>1 (Label)</td>
+                  </tr>
+
+                  <tr>
+                    <td>Missing Values</td>
+                    <td>0</td>
+                  </tr>
+
+                  <tr>
+                    <td>Duplicate Records</td>
+                    <td>0</td>
+                  </tr>
+
+                  <tr>
+                    <td>Memory Usage</td>
+                    <td>~155 KB</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="card">
+              <h2>
+                <i class="fa-solid fa-chart-line"></i>
+                Key Dataset Insights
+              </h2>
+
+              <ul class="insight-list">
+                <li>
+                  <i class="fa-solid fa-circle-check text-success"></i>
+                  Dataset contains <strong>2,200 observations</strong> across 22
+                  crop categories.
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-circle-check text-success"></i>
+                  No missing values detected in any feature.
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-circle-check text-success"></i>
+                  Dataset contains no duplicate records.
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-circle-check text-success"></i>
+                  Features include soil nutrients, environmental conditions and
+                  rainfall.
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-circle-check text-success"></i>
+                  Suitable for supervised multi-class classification.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card overview-card">
+            <h2>
+              <i class="fa-solid fa-list-check"></i>
+              Available Features
+            </h2>
+
+            <div class="feature-grid">
+              <div class="feature-item">Nitrogen (N)</div>
+
+              <div class="feature-item">Phosphorus (P)</div>
+
+              <div class="feature-item">Potassium (K)</div>
+
+              <div class="feature-item">Temperature</div>
+
+              <div class="feature-item">Humidity</div>
+
+              <div class="feature-item">pH</div>
+
+              <div class="feature-item">Rainfall</div>
+
+              <div class="feature-item">Crop Label</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: CROP RECOMMENDATION -->
+        <div id="recommendation" class="tab-content">
+          <div class="card max-w-3xl mx-auto">
+            <h2><i class="fa-solid fa-gears"></i> Engine Prediction Matrix</h2>
+            <p class="text-muted">
+              Input target environmental points below to compute the single
+              optimal model classification target.
+            </p>
+            <form id="recommend-form" class="form-grid">
+              <div class="form-group">
+                <label>Nitrogen (N)</label>
+                <input
+                  type="number"
+                  name="N"
+                  value="90"
+                  required
+                  min="0"
+                  max="150"
+                />
+              </div>
+              <div class="form-group">
+                <label>Phosphorus (P)</label>
+                <input
+                  type="number"
+                  name="P"
+                  value="42"
+                  required
+                  min="0"
+                  max="150"
+                />
+              </div>
+              <div class="form-group">
+                <label>Potassium (K)</label>
+                <input
+                  type="number"
+                  name="K"
+                  value="43"
+                  required
+                  min="0"
+                  max="250"
+                />
+              </div>
+              <div class="form-group">
+                <label>Temperature (°C)</label>
+                <input
+                  type="number"
+                  name="temperature"
+                  step="0.01"
+                  value="20.87"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Humidity (%)</label>
+                <input
+                  type="number"
+                  name="humidity"
+                  step="0.01"
+                  value="82.00"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Soil pH</label>
+                <input
+                  type="number"
+                  name="ph"
+                  step="0.01"
+                  value="6.50"
+                  required
+                  min="0"
+                  max="14"
+                />
+              </div>
+              <div class="form-group full-width">
+                <label>Expected Rainfall (mm)</label>
+                <input
+                  type="number"
+                  name="rainfall"
+                  step="0.01"
+                  value="202.93"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary full-width">
+                Execute Neural Inference Mapping
+              </button>
+            </form>
+            <div id="recommend-result" class="result-box hide"></div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: CROP VALIDATION -->
+        <div id="validation" class="tab-content">
+          <div class="card max-w-3xl mx-auto">
+            <h2>
+              <i class="fa-solid fa-shield-halved"></i> Field Choice
+              Verification Dashboard
+            </h2>
+            <p class="text-muted">
+              Compare an intentionally planned operational harvest selection
+              against local soil chemistry metrics.
+            </p>
+            <form id="validate-form" class="form-grid">
+              <div class="form-group full-width">
+                <label for="validation-crop-select">Planned Harvest Type</label>
+                <select
+                  name="crop"
+                  id="validation-crop-select"
+                  class="form-select"
+                  required
+                >
+                  <option value="" disabled selected>
+                    -- Select a Target Crop for Validation Matrix --
+                  </option>
+                  <option value="rice">Rice</option>
+                  <option value="maize">Maize</option>
+                  <option value="chickpea">Chickpea</option>
+                  <option value="kidneybeans">Kidney Beans</option>
+                  <option value="pigeonpeas">Pigeon Peas</option>
+                  <option value="mothbeans">Moth Beans</option>
+                  <option value="mungbean">Mung Bean</option>
+                  <option value="blackgram">Blackgram</option>
+                  <option value="lentil">Lentil</option>
+                  <option value="pomegranate">Pomegranate</option>
+                  <option value="banana">Banana</option>
+                  <option value="mango">Mango</option>
+                  <option value="grapes">Grapes</option>
+                  <option value="watermelon">Watermelon</option>
+                  <option value="muskmelon">Muskmelon</option>
+                  <option value="apple">Apple</option>
+                  <option value="orange">Orange</option>
+                  <option value="papaya">Papaya</option>
+                  <option value="coconut">Coconut</option>
+                  <option value="cotton">Cotton</option>
+                  <option value="jute">Jute</option>
+                  <option value="coffee">Coffee</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Nitrogen (N)</label>
+                <input type="number" name="N" value="85" required />
+              </div>
+              <div class="form-group">
+                <label>Phosphorus (P)</label>
+                <input type="number" name="P" value="58" required />
+              </div>
+              <div class="form-group">
+                <label>Potassium (K)</label>
+                <input type="number" name="K" value="41" required />
+              </div>
+              <div class="form-group">
+                <label>Temperature (°C)</label>
+                <input
+                  type="number"
+                  name="temperature"
+                  step="0.01"
+                  value="21.77"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Humidity (%)</label>
+                <input
+                  type="number"
+                  name="humidity"
+                  step="0.01"
+                  value="80.31"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Soil pH</label>
+                <input
+                  type="number"
+                  name="ph"
+                  step="0.01"
+                  value="7.02"
+                  required
+                />
+              </div>
+              <div class="form-group full-width">
+                <label>Expected Rainfall (mm)</label>
+                <input
+                  type="number"
+                  name="rainfall"
+                  step="0.01"
+                  value="225.50"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-accent full-width">
+                Execute Crop Validation Check
+              </button>
+            </form>
+            <div id="validate-result" class="result-box hide"></div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: RESEARCH ANALYTICS PIPELINE -->
+        <div id="analytics" class="tab-content">
+          <div class="card">
+            <h2>
+              <i class="fa-solid fa-calculator"></i>
+              OptiCrop Automated Statistical Pipeline
+            </h2>
+
+            <p class="text-muted">
+              Upload a CSV or Excel dataset to execute the complete research
+              analytics pipeline, or instantly explore the platform using the
+              built-in sample crop recommendation dataset.
+            </p>
+
+            <form id="analytics-form">
+              <div class="upload-box" id="upload-box">
+                <i class="fa-solid fa-cloud-arrow-up file-icon"></i>
+
+                <p>
+                  Drag &amp; drop your dataset here or click to browse your
+                  computer.
+                </p>
+
+                <input
+                  type="file"
+                  id="pipeline-file"
+                  accept=".csv,.xlsx,.xls"
+                  hidden
+                />
+
+                <div
+                  id="file-metadata"
+                  class="text-accent font-mono mt-2"
+                ></div>
+              </div>
+
+              <!-- REPLACED PLACEHOLDER: Dataset Name Input Fields -->
+              <div class="form-group max-w-md mx-auto mt-4">
+                <label for="dataset_name">Dataset Name (Optional)</label>
+                <input
+                  type="text"
+                  id="dataset_name"
+                  placeholder="e.g., Summer 2026 Harvest Data"
+                  class="form-control"
+                />
+              </div>
+
+              <!-- REPLACED PLACEHOLDER: Submit and Sample Data Buttons -->
+              <div
+                class="pipeline-actions mt-4"
+                style="display: flex; gap: 1rem; justify-content: center"
+              >
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa-solid fa-play"></i> Run Analytics
+                </button>
+                <button
+                  type="button"
+                  id="sample-dataset-btn"
+                  class="btn btn-secondary"
+                >
+                  <i class="fa-solid fa-database"></i> Load Sample Dataset
+                </button>
+              </div>
+            </form>
+
+            <!-- Loading -->
+            <div id="pipeline-loading" class="loading-container hide">
+              <div class="spinner"></div>
+              <p>
+                Running statistical analysis, generating visualizations, and
+                compiling research reports...
+              </p>
+            </div>
+
+            <!-- Results -->
+            <div id="pipeline-results" class="hide">
+              <hr />
+
+              <div class="alert-success-banner mb-4">
+                Analytics completed successfully. Results and visualizations are
+                ready.
+              </div>
+
+              <div class="dashboard-layout">
+                <div class="card">
+                  <h3>Dataset Quality Summary</h3>
+                  <div id="quality-metrics"></div>
+                </div>
+
+                <div class="card">
+                  <h3>PCA Cluster Coordinates</h3>
+
+                  <div class="table-container-scroll">
+                    <table class="data-table font-mono" id="pca-table">
+                      <thead>
+                        <tr>
+                          <th>Cluster</th>
+                          <th>Principal Component 1</th>
+                          <th>Principal Component 2</th>
+                        </tr>
+                      </thead>
+
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="mt-4">
+                <i class="fa-solid fa-chart-line"></i>
+                Generated Visualizations
+              </h3>
+
+              <div id="charts-display-grid" class="charts-grid">
+                <!-- Filled dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

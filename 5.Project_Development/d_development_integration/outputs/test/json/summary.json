@@ -1,0 +1,22 @@
+{
+    "rows": 2200,
+    "columns": 8,
+    "numeric_columns": [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall"
+    ],
+    "categorical_columns": [
+        "label"
+    ],
+    "target": "label",
+    "exports": {
+        "csv": "outputs/csv",
+        "json": "outputs/json",
+        "charts": "outputs/charts"
+    }
+}

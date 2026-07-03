@@ -1,0 +1,22 @@
+{
+    "rows": 2200,
+    "columns": 8,
+    "numeric_columns": [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall"
+    ],
+    "categorical_columns": [
+        "label"
+    ],
+    "target": "label",
+    "exports": {
+        "csv": "outputs/Sample_Crop_Recommendation_Dataset_20260703_124814/csv",
+        "json": "outputs/Sample_Crop_Recommendation_Dataset_20260703_124814/json",
+        "charts": "outputs/Sample_Crop_Recommendation_Dataset_20260703_124814/charts"
+    }
+}

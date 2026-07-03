@@ -1,0 +1,89 @@
+{
+    "dataset": {
+        "name": "Sample_Crop_Recommendation_Dataset",
+        "rows": 2200,
+        "columns": 8,
+        "target": "label"
+    },
+    "files": {
+        "csv": [
+            "climate_statistics.csv",
+            "cluster_results.csv",
+            "crop_distribution.csv",
+            "crop_profiles.csv",
+            "data_quality.csv",
+            "descriptive_statistics.csv",
+            "distribution_summary.csv",
+            "feature_importance.csv",
+            "missing_value_summary.csv",
+            "outlier_summary.csv",
+            "outliers.csv",
+            "pca_coordinates.csv",
+            "pca_variance.csv",
+            "pearson_correlation.csv",
+            "research_insights.csv",
+            "research_observations.csv",
+            "soil_crop_statistics.csv",
+            "spearman_correlation.csv",
+            "validation_report.csv"
+        ],
+        "json": [
+            "data_quality.json",
+            "descriptive_statistics.json",
+            "distribution_summary.json",
+            "missing_value_summary.json",
+            "research_insights.json",
+            "research_observations.json",
+            "summary.json",
+            "validation_report.json"
+        ],
+        "charts": [
+            "K_boxplot.png",
+            "N_boxplot.png",
+            "P_boxplot.png",
+            "advanced",
+            "crop_distribution.png",
+            "distributions",
+            "humidity_boxplot.png",
+            "missing_value_bar.png",
+            "missing_value_heatmap.png",
+            "missingno_matrix.png",
+            "pearson_heatmap.png",
+            "ph_boxplot.png",
+            "rainfall_boxplot.png",
+            "spearman_heatmap.png",
+            "temperature_boxplot.png"
+        ]
+    },
+    "quality": {
+        "Total Rows": 2200,
+        "Total Columns": 8,
+        "Missing Values": 0,
+        "Duplicate Rows": 0,
+        "Numeric Features": 7,
+        "Categorical Features": 1
+    },
+    "validation": [
+        {
+            "Check": "Dataset Loaded",
+            "Status": "PASS",
+            "Details": "2200 rows"
+        },
+        {
+            "Check": "Required Columns",
+            "Status": "PASS",
+            "Details": "None"
+        },
+        {
+            "Check": "Duplicate Columns",
+            "Status": "PASS",
+            "Details": "None"
+        },
+        {
+            "Check": "Numeric Feature Types",
+            "Status": "PASS",
+            "Details": "All Numeric"
+        }
+    ],
+    "timestamp": "20260703_124814"
+}

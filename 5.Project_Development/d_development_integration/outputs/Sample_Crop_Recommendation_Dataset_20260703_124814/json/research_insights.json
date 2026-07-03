@@ -1,0 +1,44 @@
+[
+    {
+        "Feature":"N",
+        "Highest Mean Crop":"cotton",
+        "Lowest Mean Crop":"lentil",
+        "Overall Mean":50.55
+    },
+    {
+        "Feature":"P",
+        "Highest Mean Crop":"apple",
+        "Lowest Mean Crop":"orange",
+        "Overall Mean":53.36
+    },
+    {
+        "Feature":"K",
+        "Highest Mean Crop":"grapes",
+        "Lowest Mean Crop":"orange",
+        "Overall Mean":48.15
+    },
+    {
+        "Feature":"temperature",
+        "Highest Mean Crop":"papaya",
+        "Lowest Mean Crop":"chickpea",
+        "Overall Mean":25.62
+    },
+    {
+        "Feature":"humidity",
+        "Highest Mean Crop":"coconut",
+        "Lowest Mean Crop":"chickpea",
+        "Overall Mean":71.48
+    },
+    {
+        "Feature":"ph",
+        "Highest Mean Crop":"chickpea",
+        "Lowest Mean Crop":"kidneybeans",
+        "Overall Mean":6.47
+    },
+    {
+        "Feature":"rainfall",
+        "Highest Mean Crop":"rice",
+        "Lowest Mean Crop":"muskmelon",
+        "Overall Mean":103.46
+    }
+]
