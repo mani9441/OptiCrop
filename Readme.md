@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./static/images/logo.png" alt="OptiCrop Logo" width="240"/>
+<img src=".5.Project_Development/d_development_integration/Readme.md" alt="OptiCrop Logo" width="240"/>
 
 # OptiCrop
 ### Smart Agricultural Production Optimization Engine
