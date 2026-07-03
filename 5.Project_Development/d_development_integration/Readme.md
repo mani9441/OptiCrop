@@ -1,14 +1,45 @@
+
 # 🌱 OptiCrop – Smart Agricultural Production Optimization Engine
 
-OptiCrop is a Machine Learning-powered agricultural decision support system that recommends the most suitable crop based on soil nutrients and environmental conditions. The application also evaluates whether a farmer's planned crop is the optimal choice and provides a comprehensive research analytics dashboard for agricultural datasets.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Flask-Web_App-000000?style=for-the-badge&logo=flask"/>
+  <img src="https://img.shields.io/badge/Machine_Learning-Random_Forest-2E8B57?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Scikit--Learn-Model-F7931E?style=for-the-badge&logo=scikitlearn"/>
+  <img src="https://img.shields.io/badge/License-Academic-blue?style=for-the-badge"/>
+</p>
 
-The project combines Machine Learning, Data Analytics, and a Flask-based web application to assist farmers, researchers, and agricultural organizations in making data-driven farming decisions.
+<p align="center">
+A Machine Learning-powered agricultural decision support system for intelligent crop recommendation,
+crop suitability evaluation, and comprehensive agricultural research analytics.
+</p>
+
+---
+
+## Table of Contents
+
+- Features
+- Project Objectives
+- Technology Stack
+- Machine Learning Model
+- Project Structure
+- API Endpoints
+- Installation
+- How It Works
+- Research Analytics Workflow
+- Future Enhancements
+- Testing
+- License
+- Authors
+- Acknowledgements
+- About OptiCrop
 
 ---
 
 ## Features
 
 ### 🌾 Crop Recommendation
+
 Predicts the most suitable crop using:
 
 - Nitrogen (N)
@@ -21,7 +52,8 @@ Predicts the most suitable crop using:
 
 using a trained Random Forest Machine Learning model.
 
----
+> [!NOTE]
+> OptiCrop predicts the most suitable crop based on soil nutrients and environmental conditions using a trained Random Forest model.
 
 ### Crop Suitability Evaluation
 
@@ -33,8 +65,6 @@ The system compares:
 - Machine Learning recommended crop
 
 and determines whether the selected crop is the optimal choice under the given environmental conditions.
-
----
 
 ### 📊 Research Analytics Dashboard
 
@@ -61,11 +91,14 @@ Supports both:
 - User uploaded datasets (.csv/.xlsx)
 - Built-in sample dataset
 
+> [!TIP]
+> Researchers can upload their own CSV or Excel datasets for automatic exploratory data analysis and report generation.
+
 ---
 
 ## Project Objectives
 
-The system aims to
+The system aims to:
 
 - Help farmers select the best crop
 - Reduce crop failure risk
@@ -77,41 +110,22 @@ The system aims to
 
 ## Technology Stack
 
-### Backend
-
-- Python
-- Flask
-- Flask-CORS
-
-### Machine Learning
-
-- Scikit-Learn
-- Random Forest Classifier
-- Pandas
-- NumPy
-- Joblib
-
-### Frontend
-
-- HTML5
-- CSS3
-- JavaScript
-
-### Data Visualization
-
-- Matplotlib
-- Plotly
-- Seaborn (Research Analytics)
+| Category | Technologies |
+|-----------|--------------|
+| **Backend** | Python, Flask, Flask-CORS |
+| **Machine Learning** | Scikit-Learn, Random Forest Classifier, Pandas, NumPy, Joblib |
+| **Frontend** | HTML5, CSS3, JavaScript |
+| **Visualization** | Matplotlib, Plotly, Seaborn |
 
 ---
 
 ## Machine Learning Model
 
-#### Dataset
+### Dataset
 
 Crop Recommendation Dataset
 
-Input Features
+### Input Features
 
 - Nitrogen
 - Phosphorus
@@ -121,13 +135,11 @@ Input Features
 - pH
 - Rainfall
 
-Output
+### Output
 
 Crop Recommendation
 
-Multiple Machine Learning algorithms were evaluated during development.
-
-Models Tested
+### Models Tested
 
 - Logistic Regression
 - Decision Tree
@@ -138,45 +150,33 @@ Models Tested
 - Gaussian Naive Bayes
 - Support Vector Machine
 
-Final Selected Model
+### Final Selected Model
 
 **Random Forest Classifier**
 
-Model Performance
+### Model Performance
 
 | Metric | Value |
-|---------|---------|
+|---------|------:|
 | Accuracy | 99.32% |
 | Precision | 99.35% |
 | Recall | 99.32% |
 | F1 Score | 99.32% |
 
-The Random Forest model was selected as the final deployment model due to its superior prediction accuracy and overall performance. :contentReference[oaicite:0]{index=0}
+The Random Forest model was selected as the final deployment model due to its superior prediction accuracy and overall performance.
 
 ---
 
 ## Project Structure
 
-```
+```text
 OptiCrop/
 │
 ├── app.py
 ├── opticrop_research_analytics_endpoint.py
-│
 ├── models/
-│   ├── random_forest_crop_recommendation.pkl
-│   └── label_encoder.pkl
-│
 ├── templates/
-│   └── index.html
-│
 ├── static/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│   └── sample_data/
-│       └── Crop_recommendation.csv
-│
 ├── requirements.txt
 └── README.md
 ```
@@ -185,115 +185,92 @@ OptiCrop/
 
 ## API Endpoints
 
----
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | Home Dashboard |
+| POST | `/predict` | Crop Recommendation |
+| POST | `/validate-crop` | Crop Suitability Evaluation |
+| POST | `/research-analytics` | Research Analytics |
 
-### Home
-
-```
-GET /
-```
+### GET /
 
 Returns the OptiCrop dashboard.
 
----
+### POST /predict
 
-### Crop Recommendation
-
-```
-POST /predict
-```
-
-#### Request
+Request
 
 ```json
 {
-    "N":90,
-    "P":42,
-    "K":43,
-    "temperature":20.8,
-    "humidity":82,
-    "ph":6.5,
-    "rainfall":202.9
+  "N":90,
+  "P":42,
+  "K":43,
+  "temperature":20.8,
+  "humidity":82,
+  "ph":6.5,
+  "rainfall":202.9
 }
 ```
 
-#### Response
+Response
 
 ```json
 {
-    "success":true,
-    "predicted_crop":"rice"
+  "success": true,
+  "predicted_crop": "rice"
 }
 ```
 
----
+### POST /validate-crop
 
-### Crop Suitability Validation
-
-```
-POST /validate-crop
-```
-
-#### Request
+Request
 
 ```json
 {
-    "crop":"cotton",
-    "N":90,
-    "P":42,
-    "K":43,
-    "temperature":20.8,
-    "humidity":82,
-    "ph":6.5,
-    "rainfall":202.9
+  "crop":"cotton",
+  "N":90,
+  "P":42,
+  "K":43,
+  "temperature":20.8,
+  "humidity":82,
+  "ph":6.5,
+  "rainfall":202.9
 }
 ```
 
-#### Response
+Response
 
 ```json
 {
-    "success":true,
-    "planned_crop":"cotton",
-    "recommended_crop":"rice",
-    "is_best_choice":false,
-    "message":"cotton is not the optimal crop. We recommend growing rice instead."
+  "success":true,
+  "planned_crop":"cotton",
+  "recommended_crop":"rice",
+  "is_best_choice":false,
+  "message":"cotton is not the optimal crop. We recommend growing rice instead."
 }
 ```
 
----
+### POST /research-analytics
 
-### Research Analytics
-
-```
-POST /research-analytics
-```
-
-Supports
-
-- Uploaded CSV dataset
-- Uploaded Excel dataset
-- Built-in sample dataset
-
-Returns a complete research analytics report including visualizations and statistical analysis.
+Supports uploaded CSV datasets, Excel datasets, and the built-in sample dataset.
 
 ---
 
 ## Installation
 
-Clone the repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/mani9441/OptiCrop.git
 ```
 
-Navigate into the project
+### Navigate to Project
 
 ```bash
 cd 5.Project_Development/d_development_integration
 ```
 
-Create a virtual environment
+### Create Virtual Environment
 
 Linux/macOS
 
@@ -309,21 +286,21 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application
+### Run the Application
 
 ```bash
 python app.py
 ```
 
-The application will start at
+Application URL
 
-```
+```text
 http://127.0.0.1:7000
 ```
 
@@ -337,35 +314,35 @@ http://127.0.0.1:7000
 4. The trained Random Forest model predicts the most suitable crop.
 5. Label Encoder converts the predicted class back to the crop name.
 6. The recommendation is returned to the frontend.
-7. Users can optionally validate a planned crop against the model's recommendation.
-8. Researchers can upload datasets for automated analytics and visualization.
+7. Users can validate their planned crop.
+8. Researchers can upload datasets for analytics.
 
 ---
 
 ## Research Analytics Workflow
 
-```
+```text
 Dataset Upload
-        │
-        ▼
+      │
+      ▼
 Data Validation
-        │
-        ▼
+      │
+      ▼
 Data Cleaning
-        │
-        ▼
+      │
+      ▼
 Exploratory Data Analysis
-        │
-        ▼
+      │
+      ▼
 Statistical Analysis
-        │
-        ▼
+      │
+      ▼
 Machine Learning Analysis
-        │
-        ▼
+      │
+      ▼
 Visualization
-        │
-        ▼
+      │
+      ▼
 Research Report Generation
 ```
 
@@ -403,11 +380,11 @@ Highlights include:
 
 Average prediction response time:
 
-```
+```text
 0.4–0.8 seconds
 ```
 
-The system achieved 99.32% prediction accuracy and demonstrated stable performance under repeated prediction requests. :contentReference[oaicite:1]{index=1} :contentReference[oaicite:2]{index=2}
+The system achieved **99.32%** prediction accuracy and demonstrated stable performance under repeated prediction requests.
 
 ---
 
@@ -419,24 +396,12 @@ This project is developed for academic and educational purposes.
 
 ## Authors
 
-<div align="center">
-  <table border="0">
-    <tr>
-      <td align="center" width="200" style="border: none;">
-        <img src="https://github.com/mani9441.png" width="100" height="100" style="border-radius:50%;"/><br />
-        <b>Manikanta Kalyanam</b><br />
-        [![GitHub](https://img.shields.io/badge/GitHub-mani9441-181717?style=flat&logo=github)](https://github.com/mani9441)
-      </td>
-      <td align="center" width="200" style="border: none;">
-        <img src="https://github.com/sriteja-mannava.png" width="100" height="100" style="border-radius:50%;"/><br />
-        <b>MANNAVA SRI TEJA</b><br />
-        [![GitHub](https://img.shields.io/badge/GitHub-sriteja--mannava-181717?style=flat&logo=github)](https://github.com/sriteja-mannava)
-      </td>
-    </tr>
-  </table>
-</div>
+| <img src="https://github.com/mani9441.png" width="100" height="100"/> | <img src="https://github.com/sriteja-mannava.png" width="100" height="100"/> |
+| :---: | :---: |
+| <b>Manikanta Kalyanam</b><br><br>[![GitHub](https://img.shields.io/badge/GitHub-mani9441-181717?style=flat&logo=github)](https://github.com/mani9441) | <b>MANNAVA SRI TEJA</b><br><br>[![GitHub](https://img.shields.io/badge/GitHub-sriteja--mannava-181717?style=flat&logo=github)](https://github.com/sriteja-mannava) |
 
 ---
+
 ## Acknowledgements
 
 - Scikit-Learn
