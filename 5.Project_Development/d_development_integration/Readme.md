@@ -6,9 +6,9 @@ The project combines Machine Learning, Data Analytics, and a Flask-based web app
 
 ---
 
-# Features
+## Features
 
-## 🌾 Crop Recommendation
+### 🌾 Crop Recommendation
 Predicts the most suitable crop using:
 
 - Nitrogen (N)
@@ -23,7 +23,7 @@ using a trained Random Forest Machine Learning model.
 
 ---
 
-## ✅ Crop Suitability Evaluation
+### Crop Suitability Evaluation
 
 Allows farmers to enter the crop they are planning to cultivate.
 
@@ -36,7 +36,7 @@ and determines whether the selected crop is the optimal choice under the given e
 
 ---
 
-## 📊 Research Analytics Dashboard
+### 📊 Research Analytics Dashboard
 
 The analytics module performs automatic dataset analysis.
 
@@ -63,7 +63,7 @@ Supports both:
 
 ---
 
-# Project Objectives
+## Project Objectives
 
 The system aims to
 
@@ -75,15 +75,15 @@ The system aims to
 
 ---
 
-# Technology Stack
+## Technology Stack
 
-## Backend
+### Backend
 
 - Python
 - Flask
 - Flask-CORS
 
-## Machine Learning
+### Machine Learning
 
 - Scikit-Learn
 - Random Forest Classifier
@@ -91,13 +91,13 @@ The system aims to
 - NumPy
 - Joblib
 
-## Frontend
+### Frontend
 
 - HTML5
 - CSS3
 - JavaScript
 
-## Data Visualization
+### Data Visualization
 
 - Matplotlib
 - Plotly
@@ -105,9 +105,9 @@ The system aims to
 
 ---
 
-# Machine Learning Model
+## Machine Learning Model
 
-### Dataset
+#### Dataset
 
 Crop Recommendation Dataset
 
@@ -155,7 +155,7 @@ The Random Forest model was selected as the final deployment model due to its su
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```
 OptiCrop/
@@ -183,11 +183,11 @@ OptiCrop/
 
 ---
 
-# API Endpoints
+## API Endpoints
 
 ---
 
-## Home
+### Home
 
 ```
 GET /
@@ -197,13 +197,13 @@ Returns the OptiCrop dashboard.
 
 ---
 
-## Crop Recommendation
+### Crop Recommendation
 
 ```
 POST /predict
 ```
 
-### Request
+#### Request
 
 ```json
 {
@@ -217,7 +217,7 @@ POST /predict
 }
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -228,13 +228,13 @@ POST /predict
 
 ---
 
-## Crop Suitability Validation
+### Crop Suitability Validation
 
 ```
 POST /validate-crop
 ```
 
-### Request
+#### Request
 
 ```json
 {
@@ -249,7 +249,7 @@ POST /validate-crop
 }
 ```
 
-### Response
+#### Response
 
 ```json
 {
@@ -263,7 +263,7 @@ POST /validate-crop
 
 ---
 
-## Research Analytics
+### Research Analytics
 
 ```
 POST /research-analytics
@@ -279,7 +279,7 @@ Returns a complete research analytics report including visualizations and statis
 
 ---
 
-# Installation
+## Installation
 
 Clone the repository
 
@@ -290,7 +290,7 @@ git clone https://github.com/mani9441/OptiCrop.git
 Navigate into the project
 
 ```bash
-cd OptiCrop
+cd 5.Project_Development/d_development_integration
 ```
 
 Create a virtual environment
@@ -329,7 +329,7 @@ http://127.0.0.1:7000
 
 ---
 
-# How It Works
+## How It Works
 
 1. User enters soil parameters.
 2. Flask receives the request.
@@ -342,7 +342,7 @@ http://127.0.0.1:7000
 
 ---
 
-# Research Analytics Workflow
+## Research Analytics Workflow
 
 ```
 Dataset Upload
@@ -371,7 +371,7 @@ Research Report Generation
 
 ---
 
-# Future Enhancements
+## Future Enhancements
 
 - Weather API integration
 - Soil image analysis
@@ -386,7 +386,7 @@ Research Report Generation
 
 ---
 
-# Testing
+## Testing
 
 The application successfully passed functional, performance, and user acceptance testing.
 
@@ -411,21 +411,33 @@ The system achieved 99.32% prediction accuracy and demonstrated stable performan
 
 ---
 
-# License
+## License
 
 This project is developed for academic and educational purposes.
 
 ---
 
-# Authors
+## Authors
 
-**Manikanta Kalyanam**
-
-**Mannava Sri Teja**
+<div align="center">
+  <table border="0">
+    <tr>
+      <td align="center" width="200" style="border: none;">
+        <img src="https://github.com/mani9441.png" width="100" height="100" style="border-radius:50%;"/><br />
+        <b>Manikanta Kalyanam</b><br />
+        [![GitHub](https://img.shields.io/badge/GitHub-mani9441-181717?style=flat&logo=github)](https://github.com/mani9441)
+      </td>
+      <td align="center" width="200" style="border: none;">
+        <img src="https://github.com/sriteja-mannava.png" width="100" height="100" style="border-radius:50%;"/><br />
+        <b>MANNAVA SRI TEJA</b><br />
+        [![GitHub](https://img.shields.io/badge/GitHub-sriteja--mannava-181717?style=flat&logo=github)](https://github.com/sriteja-mannava)
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
-
-# Acknowledgements
+## Acknowledgements
 
 - Scikit-Learn
 - Flask
@@ -436,6 +448,6 @@ This project is developed for academic and educational purposes.
 
 ---
 
-# About OptiCrop
+## About OptiCrop
 
 OptiCrop is designed to bridge the gap between agriculture and artificial intelligence by combining machine learning, statistical analytics, and an intuitive web interface. It enables farmers to make informed crop selection decisions while providing researchers with tools to analyze agricultural datasets, promoting data-driven and sustainable farming practices.
