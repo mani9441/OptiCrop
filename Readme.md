@@ -34,9 +34,6 @@
 
 </div>
 
-> [!NOTE]
-> Place your logo file at `assets/logo.png` in the repository root (recommended: 512x512 PNG, transparent background). The image above is a placeholder reference until that file is added.
-
 ---
 
 ## Overview
